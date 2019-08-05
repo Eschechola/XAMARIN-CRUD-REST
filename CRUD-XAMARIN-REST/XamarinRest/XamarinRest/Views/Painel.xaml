@@ -1,0 +1,99 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="XamarinRest.Views.Painel">
+    <ContentPage.Content>
+        <AbsoluteLayout
+            BackgroundColor="#660b0b">
+
+            <Grid
+                AbsoluteLayout.LayoutBounds="1,.9,1,.8"
+                AbsoluteLayout.LayoutFlags="All"
+                BackgroundColor="Transparent">
+
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"></ColumnDefinition>
+                    <ColumnDefinition Width="*"></ColumnDefinition>
+                </Grid.ColumnDefinitions>
+
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*"></RowDefinition>
+                    <RowDefinition Height="*"></RowDefinition>
+                </Grid.RowDefinitions>
+
+                
+                <StackLayout BackgroundColor="Transparent" 
+                             Grid.Column="0" 
+                             Grid.Row="0">
+
+                    <ImageButton BackgroundColor="Transparent"
+                                 Source="add.png"
+                                 WidthRequest="100"
+                                 HeightRequest="100"
+                                 Clicked="ChamarAdicionar"
+                                 />
+
+                    <Label Text="Inserir Usuário"
+                          TextColor="White"
+                          FontSize="20"
+                          HorizontalTextAlignment="Center"        
+                    />
+                </StackLayout>
+
+                <StackLayout BackgroundColor="Transparent" 
+                             Grid.Column="1" 
+                             Grid.Row="0">
+
+                    <ImageButton BackgroundColor="Transparent" Source="alter.png" WidthRequest="100" HeightRequest="100"/>
+
+                    <Label Text="Alterar Usuário"
+                          TextColor="White"
+                          FontSize="20"
+                          HorizontalTextAlignment="Center"        
+                    />
+                </StackLayout>
+
+                <StackLayout BackgroundColor="Transparent" 
+                             Grid.Column="0" 
+                             Grid.Row="1">
+
+                    <ImageButton BackgroundColor="Transparent" Source="delete.png" WidthRequest="100" HeightRequest="100"/>
+
+                    <Label Text="Deletar Usuário"
+                          TextColor="White"
+                          FontSize="20"
+                          HorizontalTextAlignment="Center"        
+                    />
+
+                </StackLayout>
+
+                <StackLayout BackgroundColor="Transparent" 
+                             Grid.Column="1" 
+                             Grid.Row="1">
+
+                    <ImageButton BackgroundColor="Transparent" Source="team.png" WidthRequest="100" HeightRequest="100"/>
+                    
+                    <Label Text="Ver Usuários"
+                          TextColor="White"
+                          FontSize="20"
+                          HorizontalTextAlignment="Center"        
+                    />
+                </StackLayout>
+
+            </Grid>
+
+            <Label
+                TextColor="White"
+                AbsoluteLayout.LayoutBounds=".5,.98"
+                FontSize="15"
+                AbsoluteLayout.LayoutFlags="YProportional, XProportional">
+
+                <Label.Text>
+                    Ⓒhola Labs.
+                </Label.Text>
+            </Label>
+
+
+        </AbsoluteLayout>
+    </ContentPage.Content>
+</ContentPage>

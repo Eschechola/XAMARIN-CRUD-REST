@@ -1,0 +1,159 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="XamarinRest.AddUser">
+    <ContentPage.Content>
+        
+        <AbsoluteLayout BackgroundColor="#660b0b">
+            <Image Source="logo.png" 
+                   WidthRequest="50"
+                   HeightRequest="50"
+                   AbsoluteLayout.LayoutBounds=".5, .025"
+                   AbsoluteLayout.LayoutFlags="XProportional, YProportional"/>
+            
+            <StackLayout AbsoluteLayout.LayoutBounds=".5,.9,.8,.85"
+                         AbsoluteLayout.LayoutFlags="All"
+                         BackgroundColor="Transparent">
+
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="*"></RowDefinition>
+                        <RowDefinition Height="*"></RowDefinition>
+                        <RowDefinition Height="*"></RowDefinition>
+                        <RowDefinition Height="*"></RowDefinition>
+                        <RowDefinition Height="*"></RowDefinition>
+                        <RowDefinition Height="*"></RowDefinition>
+                        <RowDefinition Height="*"></RowDefinition>
+                        <RowDefinition Height="*"></RowDefinition>
+                        <RowDefinition Height="*"></RowDefinition>
+                        <RowDefinition Height="*"></RowDefinition>
+                        <RowDefinition Height="*"></RowDefinition>
+                        <RowDefinition Height="*"></RowDefinition>
+                    </Grid.RowDefinitions>
+
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="3*"></ColumnDefinition>
+                        <ColumnDefinition Width="*"></ColumnDefinition>
+                    </Grid.ColumnDefinitions>
+
+                    <Entry
+                        Margin="0,-20,0,0"
+                        FontSize="20"
+                        Placeholder="Digite seu nome"
+                        Grid.Column="0"
+                        Grid.Row="0"
+                        Grid.ColumnSpan="2"
+                        TextColor="White"
+                        PlaceholderColor="Gray"
+                        x:Name="txt_nome"/>
+
+                    <Entry
+                        Margin="0,-20,0,0"
+                        FontSize="20"
+                        Placeholder="Digite seu email"
+                        Grid.Column="0"
+                        Grid.Row="2"
+                        Grid.ColumnSpan="2"
+                        TextColor="White"
+                        x:Name="txt_email"
+                        PlaceholderColor="Gray"/>
+
+                    <Label
+                        FontSize="20"
+                        IsEnabled="False"
+                        Text="Selecione sua idade"
+                        Grid.Column="0"
+                        Grid.Row="4"
+                        TextColor="Gray"
+                        x:Name="txt_idade"
+                        />
+
+                    <StackLayout
+                        Grid.Column="1"
+                        Grid.Row="4"
+                        Orientation="Horizontal">
+
+                        <Button Text="+"
+                                BackgroundColor="White"
+                                TextColor="DimGray"
+                                FontSize="20"
+                                HorizontalOptions="Center"
+                                VerticalOptions="Center"
+                                FontAttributes="Bold"
+                                WidthRequest="35"
+                                HeightRequest="35"
+                                Clicked="AumentarIdade"
+                                Padding="0"
+                            />
+
+                        <Button Text="-"
+                                BackgroundColor="White"
+                                TextColor="DimGray"
+                                FontSize="20"
+                                Padding="0"
+                                FontAttributes="Bold"
+                                HorizontalOptions="Center"
+                                VerticalOptions="Center"
+                                WidthRequest="35"
+                                HeightRequest="35"
+                                Clicked="DiminuirIdade"
+                        />
+
+                    </StackLayout>
+
+
+                    <Entry
+                        Margin="0,-20,0,0"
+                        IsPassword="True"
+                        FontSize="20"
+                        Placeholder="Digite sua senha"
+                        Grid.Column="0"
+                        Grid.Row="6"
+                        Grid.ColumnSpan="2"
+                        TextColor="White"
+                        PlaceholderColor="Gray"
+                        x:Name="txt_senha"/>
+
+                    <Entry
+                        Margin="0,-20,0,0"
+                        IsPassword="True"
+                        FontSize="20"
+                        Placeholder="Digite sua senha novamente"
+                        TextColor="White"
+                        Grid.Column="0"
+                        Grid.Row="8"
+                        Grid.ColumnSpan="2"
+                        PlaceholderColor="Gray"
+                        x:Name="txt_confirmarSenha"/>
+
+                    <Button
+                        Text="Cadastrar"
+                        TextColor="White"
+                        BorderRadius="10"
+                        BorderWidth="1.5"
+                        BorderColor="White"
+                        HorizontalOptions="Center"
+                        VerticalOptions="Center"
+                        HeightRequest="80"
+                        WidthRequest="260"
+                        BackgroundColor="Transparent"
+                        Grid.Column="0"
+                        Grid.Row="10"
+                        Grid.ColumnSpan="2"
+                        Clicked="CadastrarUsuario"/>
+                </Grid>
+            </StackLayout>
+
+            <Label
+                    TextColor="White"
+                    AbsoluteLayout.LayoutBounds=".5,.98"
+                    FontSize="15"
+                    AbsoluteLayout.LayoutFlags="YProportional, XProportional">
+
+                <Label.Text>
+                    Ⓒhola Labs.
+                </Label.Text>
+            </Label>
+        </AbsoluteLayout>
+    </ContentPage.Content>
+</ContentPage>

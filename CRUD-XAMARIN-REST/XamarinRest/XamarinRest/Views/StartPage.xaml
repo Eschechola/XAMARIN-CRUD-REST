@@ -1,0 +1,43 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="XamarinRest.StartPage">
+    <ContentPage.Content>
+        <AbsoluteLayout
+            BackgroundColor="#660b0b">
+
+            <Image Source="logo.png"
+                AbsoluteLayout.LayoutBounds=".5,.3,1,.25"  
+                AbsoluteLayout.LayoutFlags="All"/>
+
+
+            <Button Text="Entrar"
+                TextColor="White"
+                BackgroundColor="Transparent"
+                BorderWidth="1.3"
+                BorderColor="White"
+                WidthRequest="200"
+                HeightRequest="50"
+                AbsoluteLayout.LayoutBounds=".5,.88,.5,.08"  
+                AbsoluteLayout.LayoutFlags="All"
+                HorizontalOptions="Center"
+                BorderRadius="8"
+                FontSize="15"
+                FontAttributes="Bold"
+                Clicked="ChamarPainel"/>
+
+            <Label
+                TextColor="White"
+                AbsoluteLayout.LayoutBounds=".5,.98"  
+                AbsoluteLayout.LayoutFlags="YProportional, XProportional">
+
+                <Label.Text>
+                    Todos os direitos reservados.
+                
+                Ⓒhola Labs.
+                </Label.Text>
+            </Label>
+
+        </AbsoluteLayout>
+    </ContentPage.Content>
+</ContentPage>

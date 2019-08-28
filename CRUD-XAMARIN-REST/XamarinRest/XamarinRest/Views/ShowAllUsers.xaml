@@ -1,0 +1,150 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="XamarinRest.ShowAllUsers">
+    <ContentPage.Content>
+        <AbsoluteLayout
+            BackgroundColor="#660b0b">
+
+            <StackLayout
+                x:Name="indicator"
+                AbsoluteLayout.LayoutBounds="1,1,1,1"
+                AbsoluteLayout.LayoutFlags="All"
+                IsVisible="False">
+
+                <ActivityIndicator 
+                    IsRunning="True"
+                    IsEnabled="True"
+                    IsVisible="True"
+                    Color="White"
+                    x:Name="loadIndicator"
+                    VerticalOptions="CenterAndExpand"/>
+            </StackLayout>
+
+            <StackLayout
+                AbsoluteLayout.LayoutBounds="0,0,1,.9"
+                AbsoluteLayout.LayoutFlags="All"
+                BackgroundColor="Transparent">
+
+                <ListView
+                    x:Name="lv_usuarios"
+                    SeparatorColor="White"
+                    HasUnevenRows="True">
+                    
+                    <ListView.ItemTemplate>
+                        <DataTemplate>
+                            <ViewCell>
+                                <StackLayout>
+                                    <StackLayout WidthRequest="320"
+                                                 HorizontalOptions="Center"
+                                                 Margin="0,20,0,0"
+                                                 Orientation="Horizontal">
+                                        
+                                        <Label Text="Nome: "
+                                               TextColor="White"
+                                               FontAttributes="Bold"
+                                               FontSize="Large"
+                                               />
+                                        
+                                        <Label Text="{Binding Nome}"
+                                               TextColor="White"
+                                               FontAttributes="Bold"
+                                               FontSize="Large"/>
+                                    </StackLayout>
+
+                                    <Grid WidthRequest="320"
+                                          Margin="0,20,0,0"
+                                          HorizontalOptions="Center">
+                                        <Grid.ColumnDefinitions>
+                                            <ColumnDefinition Width="*"></ColumnDefinition>
+                                            <ColumnDefinition Width="3*"></ColumnDefinition>
+                                        </Grid.ColumnDefinitions>
+
+                                        <Grid.RowDefinitions>
+                                            <RowDefinition Height="*"></RowDefinition>
+                                            <RowDefinition Height="*"></RowDefinition>
+                                            <RowDefinition Height="*"></RowDefinition>
+                                            <RowDefinition Height="*"></RowDefinition>
+                                            <RowDefinition Height="*"></RowDefinition>
+                                        </Grid.RowDefinitions>
+
+                                        <Label Text="ID: " 
+                                               TextColor="White"
+                                               FontSize="Medium"
+                                               FontAttributes="Bold"
+                                               Grid.Column="0"
+                                               Grid.Row="0"/>
+
+                                        <Label Text="{Binding Id}" 
+                                               TextColor="White"
+                                               FontSize="Medium"
+                                               Grid.Column="1"
+                                               Grid.Row="0"/>
+
+                                        <Label Text="Email: " 
+                                               TextColor="White"
+                                               FontSize="Medium"
+                                               FontAttributes="Bold"
+                                               Grid.Column="0"
+                                               Grid.Row="1"/>
+
+                                        <Label Text="{Binding Email}" 
+                                               TextColor="White"
+                                               FontSize="Medium"
+                                               Grid.Column="1"
+                                               Grid.Row="1"/>
+
+                                        <Label Text="Idade: " 
+                                               TextColor="White"
+                                               FontSize="Medium"
+                                               FontAttributes="Bold"
+                                               Grid.Column="0"
+                                               Grid.Row="2"/>
+
+                                        <Label Text="{Binding Idade}" 
+                                               TextColor="White"
+                                               FontSize="Medium"
+                                               Grid.Column="1"
+                                               Grid.Row="2"/>
+
+                                        <Label Text="Senha: " 
+                                               TextColor="White"
+                                               FontSize="Medium"
+                                               FontAttributes="Bold"
+                                               Grid.Column="0"
+                                               Grid.Row="3"/>
+
+                                        <Label Text="{Binding Senha}" 
+                                               TextColor="White"
+                                               FontSize="Medium"
+                                               Grid.Column="1"
+                                               Grid.Row="3"/>
+                                    </Grid>
+                                </StackLayout>
+                            </ViewCell>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                </ListView>
+                    
+            </StackLayout>
+            
+            <StackLayout
+                AbsoluteLayout.LayoutBounds="0,1,1,.1"
+                AbsoluteLayout.LayoutFlags="All"
+                BackgroundColor="#3b0505">
+
+                <Button Text="Voltar"
+                        HorizontalOptions="CenterAndExpand"
+                        VerticalOptions="CenterAndExpand"
+                        BackgroundColor="Transparent"
+                        BorderColor="Transparent"
+                        FontAttributes="Bold"
+                        FontSize="Large"
+                        TextColor="White"
+                        Clicked="Voltar"
+                 />
+
+            </StackLayout>
+        </AbsoluteLayout>
+    </ContentPage.Content>
+</ContentPage>

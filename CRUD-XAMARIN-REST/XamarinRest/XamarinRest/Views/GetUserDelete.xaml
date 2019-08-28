@@ -1,0 +1,68 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="XamarinRest.GetUserDelete">
+    <ContentPage.Content>
+       <StackLayout
+                HorizontalOptions="FillAndExpand"
+                VerticalOptions="FillAndExpand"
+                BackgroundColor="#660b0b">
+
+        <StackLayout
+                x:Name="indicator"
+                VerticalOptions="FillAndExpand"
+                HorizontalOptions="FillAndExpand"
+                IsVisible="False">
+
+            <ActivityIndicator 
+                    IsRunning="True"
+                    IsEnabled="True"
+                    IsVisible="True"
+                    Color="White"
+                    x:Name="loadIndicator"
+                    VerticalOptions="CenterAndExpand"/>
+        </StackLayout>
+
+        <StackLayout 
+                VerticalOptions="CenterAndExpand"
+                HorizontalOptions="Center"
+                WidthRequest="320"
+                x:Name="ContentEmail">
+
+            <Label Text="E-mail do usuário:"
+                       TextColor="White"
+                       FontSize="Medium"
+                       HorizontalTextAlignment="Start"/>
+
+            <Entry x:Name="txt_email"
+                       HorizontalOptions="FillAndExpand"
+                       TextColor="White"/>
+
+            <Button Text="Verificar"
+                        HorizontalOptions="Center"
+                        BackgroundColor="Transparent"
+                        BorderWidth="1.5"
+                        BorderColor="White"
+                        TextColor="White"
+                        FontAttributes="Bold"
+                        BorderRadius="3"
+                        Margin="0,50,0,0"
+                        WidthRequest="150"
+                        Clicked="GetUsuarioByEmail" />
+            </StackLayout>
+
+            <Label
+                TextColor="White"
+                FontSize="15"
+                VerticalOptions="EndAndExpand"
+                HorizontalOptions="CenterAndExpand"
+                >
+
+                <Label.Text>
+                    Ⓒhola Labs.
+                </Label.Text>
+            </Label>
+
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

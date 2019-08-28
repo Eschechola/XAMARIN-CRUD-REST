@@ -5,7 +5,7 @@
     <ContentPage.Content>
         <AbsoluteLayout
             BackgroundColor="#660b0b">
-
+            
             <Grid
                 AbsoluteLayout.LayoutBounds="1,.9,1,.8"
                 AbsoluteLayout.LayoutFlags="All"
@@ -21,7 +21,6 @@
                     <RowDefinition Height="*"></RowDefinition>
                 </Grid.RowDefinitions>
 
-                
                 <StackLayout BackgroundColor="Transparent" 
                              Grid.Column="0" 
                              Grid.Row="0">
@@ -44,7 +43,7 @@
                              Grid.Column="1" 
                              Grid.Row="0">
 
-                    <ImageButton BackgroundColor="Transparent" Source="alter.png" WidthRequest="100" HeightRequest="100"/>
+                    <ImageButton BackgroundColor="Transparent" Source="alter.png" WidthRequest="100" HeightRequest="100" Clicked="ChamarAlterar"/>
 
                     <Label Text="Alterar Usuário"
                           TextColor="White"
@@ -57,7 +56,7 @@
                              Grid.Column="0" 
                              Grid.Row="1">
 
-                    <ImageButton BackgroundColor="Transparent" Source="delete.png" WidthRequest="100" HeightRequest="100"/>
+                    <ImageButton BackgroundColor="Transparent" Source="delete.png" WidthRequest="100" HeightRequest="100" Clicked="ChamarDeletar"/>
 
                     <Label Text="Deletar Usuário"
                           TextColor="White"
@@ -71,7 +70,7 @@
                              Grid.Column="1" 
                              Grid.Row="1">
 
-                    <ImageButton BackgroundColor="Transparent" Source="team.png" WidthRequest="100" HeightRequest="100"/>
+                    <ImageButton BackgroundColor="Transparent" Source="team.png" WidthRequest="100" HeightRequest="100" Clicked="ChamarTodosUsuarios"/>
                     
                     <Label Text="Ver Usuários"
                           TextColor="White"

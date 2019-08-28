@@ -1,9 +1,11 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="XamarinRest.AddUser">
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="XamarinRest.AlterUsers">
     <ContentPage.Content>
-        
         <AbsoluteLayout BackgroundColor="#660b0b">
             <StackLayout
                 x:Name="indicator"
@@ -11,15 +13,15 @@
                 AbsoluteLayout.LayoutFlags="All"
                 IsVisible="False">
 
-                <ActivityIndicator
-                    IsRunning="False"
+                <ActivityIndicator 
+                    IsRunning="True"
                     IsEnabled="True"
                     IsVisible="True"
                     Color="White"
                     x:Name="loadIndicator"
                     VerticalOptions="CenterAndExpand"/>
             </StackLayout>
-            
+
             <Image Source="logo.png" 
                    WidthRequest="50"
                    HeightRequest="50"
@@ -144,7 +146,7 @@
                         x:Name="txt_confirmarSenha"/>
 
                     <Button
-                        Text="Cadastrar"
+                        Text="Alterar"
                         TextColor="White"
                         BorderRadius="10"
                         BorderWidth="1.5"
@@ -157,7 +159,7 @@
                         Grid.Column="0"
                         Grid.Row="10"
                         Grid.ColumnSpan="2"
-                        Clicked="CadastrarUsuario"/>
+                        Clicked="AlterarUsuario"/>
                 </Grid>
             </StackLayout>
 

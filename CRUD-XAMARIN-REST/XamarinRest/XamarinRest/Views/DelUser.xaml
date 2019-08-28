@@ -1,0 +1,126 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="XamarinRest.Views.DelUser">
+    <ContentPage.Content>
+        <StackLayout
+            BackgroundColor="#660b0b">
+
+            <StackLayout
+                HorizontalOptions="Center"
+                VerticalOptions="CenterAndExpand"
+                HeightRequest="400"
+                WidthRequest="300"
+                BackgroundColor="Transparent"
+                Margin="0,50,0,0">
+
+                <Label Text="Deseja realmente apagar este usuário?"
+                       TextColor="White"
+                       FontSize="Large"
+                       FontAttributes="Bold"
+                       />
+                <StackLayout Orientation="Horizontal" Margin="0,20,0,0">
+                    <Label Text="ID:"
+                           TextColor="White"
+                           FontSize="Medium"
+                           FontAttributes="Bold"/>
+
+                    <Label Text="1"
+                           TextColor="White"
+                           FontSize="Medium"
+                           x:Name="txt_id"/>
+                </StackLayout>
+
+                <StackLayout Orientation="Horizontal">
+                    <Label Text="Nome:"
+                           TextColor="White"
+                           FontSize="Medium"
+                           FontAttributes="Bold"/>
+
+                    <Label Text="Lucas"
+                           TextColor="White"
+                           FontSize="Medium"
+                           x:Name="txt_nome"/>
+                </StackLayout>
+
+                <StackLayout Orientation="Horizontal">
+                    <Label Text="Idade:"
+                           TextColor="White"
+                           FontSize="Medium"
+                           FontAttributes="Bold"/>
+
+                    <Label Text="17"
+                           TextColor="White"
+                           FontSize="Medium"
+                           x:Name="txt_idade"/>
+                </StackLayout>
+
+                <StackLayout Orientation="Horizontal">
+                    <Label Text="Email:"
+                           TextColor="White"
+                           FontSize="Medium"
+                           FontAttributes="Bold"/>
+
+                    <Label Text="a@eu.com"
+                           TextColor="White"
+                           FontSize="Medium"
+                           x:Name="txt_email"/>
+                </StackLayout>
+
+                <StackLayout Orientation="Horizontal">
+                    <Label Text="Senha:"
+                           TextColor="White"
+                           FontSize="Medium"
+                           FontAttributes="Bold"/>
+
+                    <Label Text="123"
+                           TextColor="White"
+                           FontSize="Medium"
+                           x:Name="txt_senha"/>
+                </StackLayout>
+
+                <StackLayout Orientation="Horizontal" Margin="0,50,0,0">
+                    <Button
+                        Text="Sim"
+                        TextColor="White"
+                        FontAttributes="Bold"
+                        FontSize="Medium"
+                        BorderWidth="1"
+                        BorderColor="White"
+                        BackgroundColor="Transparent"
+                        BorderRadius="3"
+                        HorizontalOptions="FillAndExpand"
+                        Clicked="Deletar"/>
+
+                    <Button
+                        Text="Não"
+                        TextColor="White"
+                        FontAttributes="Bold"
+                        FontSize="Medium"
+                        BorderWidth="1"
+                        BorderColor="White"
+                        BackgroundColor="Transparent"
+                        BorderRadius="3"
+                        HorizontalOptions="FillAndExpand"
+                        Clicked="NaoDeletar"
+                    />
+
+                </StackLayout>
+
+            </StackLayout>
+
+            <Label
+                TextColor="White"
+                FontSize="15"
+                VerticalOptions="EndAndExpand"
+                HorizontalOptions="CenterAndExpand"
+                >
+
+                <Label.Text>
+                    Ⓒhola Labs.
+                </Label.Text>
+            </Label>
+
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

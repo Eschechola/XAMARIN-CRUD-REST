@@ -14,50 +14,58 @@ using XamarinRest.Models;
 
 namespace XamarinRest
 {
-	[XamlCompilation(XamlCompilationOptions.Compile)]
-	public partial class AddUser : ContentPage
-	{
+    [XamlCompilation(XamlCompilationOptions.Compile)]
+    public partial class AlterUsers : ContentPage
+    {
+        private Usuario UsuarioAtualizar;
         private int Idade = 16;
         private bool AlterouIdade = false;
-        public AddUser ()
-		{
-			InitializeComponent ();
-            indicator.BackgroundColor = Color.FromRgba(0, 0, 0, 0.5);
+
+        public AlterUsers(Usuario usuario)
+        {
+            InitializeComponent();
+            UsuarioAtualizar = usuario;
+
+            txt_nome.Text = usuario.Nome;
+            txt_senha.Text = usuario.Senha;
+            txt_idade.Text = usuario.Idade.ToString();
+            Idade = usuario.Idade;
+            txt_email.Text = usuario.Email;
         }
 
-        public void CadastrarUsuario(object sender, EventArgs args)
+        public void AlterarUsuario(object sender, EventArgs args)
         {
             indicator.IsVisible = true;
             ContentUser.IsVisible = false;
-
             if (txt_nome.Text == string.Empty || txt_nome.Text == "" || txt_nome.Text == null)
             {
-                 DisplayAlert("Erro!", "O nome deve ser preenchido.", "Ok");
+                DisplayAlert("Erro!", "O nome deve ser preenchido.", "Ok");
             }
             else if (txt_email.Text == string.Empty || txt_email.Text == "" || txt_email.Text == null)
             {
-                 DisplayAlert("Erro!", "O email deve ser preenchido.", "Ok");
+                DisplayAlert("Erro!", "O email deve ser preenchido.", "Ok");
             }
             else if (txt_senha.Text == string.Empty || txt_senha.Text == "" || txt_senha.Text == null)
             {
-                 DisplayAlert("Erro!", "A senha deve ser preenchida.", "Ok");
+                DisplayAlert("Erro!", "A senha deve ser preenchida.", "Ok");
             }
             else if (txt_confirmarSenha.Text == string.Empty || txt_confirmarSenha.Text == "" || txt_confirmarSenha.Text == null)
             {
-                 DisplayAlert("Erro!", "A confirmação da senha deve ser preenchida.", "Ok");
+                DisplayAlert("Erro!", "A confirmação da senha deve ser preenchida.", "Ok");
             }
-            else if (txt_senha.Text!=txt_confirmarSenha.Text)
+            else if (txt_senha.Text != txt_confirmarSenha.Text)
             {
-                 DisplayAlert("Erro!", "As senhas não são iguais.", "Ok");
+                DisplayAlert("Erro!", "As senhas não são iguais.", "Ok");
             }
             else if (!AlterouIdade)
             {
-                 DisplayAlert("Erro!", "Selecione sua idade.", "Ok");
+                DisplayAlert("Erro!", "Selecione sua idade.", "Ok");
             }
             else
             {
                 Usuario usuario = new Usuario
                 {
+                    Id = UsuarioAtualizar.Id,
                     Nome = txt_nome.Text,
                     Senha = txt_senha.Text,
                     Email = txt_email.Text,
@@ -65,17 +73,16 @@ namespace XamarinRest
                 };
 
                 var aplicacao = new UsuarioAplicacao();
-                
+
                 Task task = Task.Run(async () =>
                 {
-                    await aplicacao.InserirUsuario(usuario);
+                    await aplicacao.AlterarUsuario(usuario);
                 });
 
                 DisplayAlert("!", aplicacao.Mensagem, "Ok");
 
                 Navigation.PopModalAsync();
             }
-
             indicator.IsVisible = false;
             ContentUser.IsVisible = true;
         }
@@ -90,9 +97,8 @@ namespace XamarinRest
         public void DiminuirIdade(object sender, EventArgs args)
         {
             AlterouIdade = AlterouIdade ? true : true;
-            Idade = Idade <= 16 ? 16 : Idade-=1;
+            Idade = Idade <= 16 ? 16 : Idade -= 1;
             txt_idade.Text = Idade.ToString();
         }
-
     }
 }
